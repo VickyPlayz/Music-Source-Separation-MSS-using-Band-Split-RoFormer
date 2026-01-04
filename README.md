@@ -16,16 +16,19 @@ This project implements the architecture described in recent literature, utilizi
 ## Current Training Status
 *As of Jan 4, 2026*
 
-I am currently training this model, and it has successfully reached **Epoch 16**.
-*   **Current Epoch**: 16 / 100
-*   **Progress**: ~70% of Epoch 16 completed
-*   **Loss**: ~0.587 (Trending Downwards)
-*   **SISDR**: ~1.45 (Improving)
+I have paused the training session at **Epoch 20**.
+*   **Status**: Paused
+*   **Last Epoch**: 20 / 100 (Stopped at ~22%)
+*   **Loss**: ~0.684
+*   **SISDR**: ~ -1.26 dB (Log metric)
 
-*Training is active and logs are being streamed to `resume.log`.*
+*Training was stopped manually. Resume from the latest checkpoint in `models/checkpoints_optimized`.*
 
 ### Performance Analysis & Expectations
-As I analyze the logs from Epoch 12 to Epoch 16, I can see a clear trend of improvement. The SISDR metric has dropped from **4.4** (Epoch 12) down to around **1.45** (Epoch 16), with hitting lows of **0.45** (Epoch 14). This confirms the model is learning to separate the sources effectively.
+By Epoch 20, the model has shown consistent improvement. SISDR metrics have continued to drop, indicating the model is effectively learning to separate the sources.
+*   **Epoch 12**: ~4.4
+*   **Epoch 16**: ~1.45
+*   **Epoch 20**: ~ -1.26 (Lower is better for this loss function)
 
 **My Design Decisions vs. SOTA**
 While the original Band-Split RoFormer paper achieves a State-of-the-Art **8.0 - 9.0 dB** SDR, I have intentionally optimized this implementation to be accessible on consumer hardware (like my RTX 3050).
