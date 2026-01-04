@@ -16,13 +16,24 @@ This project implements the architecture described in recent literature, utilizi
 ## Current Training Status
 *As of Jan 4, 2026*
 
-The model is currently training and has resumed from **Epoch 11**.
+I am currently training this model, and it has successfully resumed from **Epoch 11**.
 *   **Current Epoch**: 12 / 100
-*   **Progress**: ~8% of Epoch 12 completed
-*   **Loss**: ~0.826 (Fluctuating)
-*   **SISDR**: ~2.32 dB (Fluctuating)
+*   **Progress**: ~23% of Epoch 12 completed
+*   **Loss**: ~1.16 (Fluctuating)
+*   **SISDR**: ~4.44 dB (Fluctuating)
 
 *Training is active and logs are being streamed to `resume.log`.*
+
+### Performance Analysis & Expectations
+As I analyze the current logs (Epoch 12), the model is fluctuating between **-4 dB and +1 dB** (SDR), which is expected at this early stage. It indicates the network is beginning to learn the spectral masks but is still refining its ability to clean up artifacts.
+
+**My Design Decisions vs. SOTA**
+While the original Band-Split RoFormer paper achieves a State-of-the-Art **8.0 - 9.0 dB** SDR, I have intentionally optimized this implementation to be accessible on consumer hardware (like my RTX 3050).
+*   **Architecture**: I reduced the model dimension (`dim` from 384+ down to **128**) to significantly lower VRAM usage.
+*   **Data**: I am training on **MUSDB18-7** (7-second snippets) to speed up the iteration cycle.
+
+**Projected Outcome**:
+Given these constraints, I expect this "Lite" model to converge around **4.0 - 5.5 dB SDR**. This will result in impressive, functional separation where vocals and distinct instruments are clearly isolated, though it may retain some minor "watery" artifacts compared to the full-size studio model. I believe this is an excellent trade-off for a model that can be trained and run on personal laptops.
 
 ---
 
