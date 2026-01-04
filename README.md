@@ -4,7 +4,7 @@ A State-of-the-Art (SOTA) implementation of **Band-Split RoFormer** for Music So
 
 This project implements the architecture described in recent literature, utilizing band-split feature extraction, a Rotary Transformer (RoFormer) backbone, and multi-domain loss functions (Frequency L1 + Phase + SISDR) to achieve high-fidelity separation.
 
-## ✨ Features
+## Features
 
 *   **Band-Split RoFormer Architecture**: Efficient frequency-band feature processing with Transformer encodings.
 *   **Multi-Domain Loss**: Combines L1 Magnitude Loss, Complex/Phase Loss, and Time-Domain SISDR (Scale-Invariant Source-to-Distortion Ratio) for robust training.
@@ -13,7 +13,7 @@ This project implements the architecture described in recent literature, utilizi
 *   **Inference & Demo**: CLI tools for separating audio files and a Gradio web interface for easy interaction.
 *   **Evaluation**: Built-in evaluation script using `museval` to calculate SDR metrics.
 
-## 📊 Current Training Status
+## Current Training Status
 *As of Jan 4, 2026*
 
 The model is currently training and has resumed from **Epoch 11**.
@@ -26,7 +26,7 @@ The model is currently training and has resumed from **Epoch 11**.
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 *   Python 3.8+
@@ -62,7 +62,7 @@ The model is currently training and has resumed from **Epoch 11**.
 
 ---
 
-## 📂 Data Preparation
+## Data Preparation
 
 This project uses the **MUSDB18** dataset.
 
@@ -75,7 +75,7 @@ This project uses the **MUSDB18** dataset.
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### 1. Training
 
@@ -127,7 +127,7 @@ python src/app.py
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```text
 .
@@ -149,7 +149,7 @@ python src/app.py
 └── README.md            # Project Documentation
 ```
 
-## 🔬 Model Architecture
+## Model Architecture
 
 The **Band-Split RoFormer** works by:
 1.  **Band-Split**: Dividing the spectrogram into sub-bands (Frequency intervals).
@@ -159,5 +159,5 @@ The **Band-Split RoFormer** works by:
 
 ---
 
-## 📜 License
+## License
 [Your License Here]
