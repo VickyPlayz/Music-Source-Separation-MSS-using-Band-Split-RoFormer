@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Models and Checkpoints
+models/
+*.pt
+*.pth
+*.ckpt
+
+# Logs
+*.log
+logs/
+
+# Data and Outputs
+outputs/
+data/
+musdb18/
+test_sample.mp4
+
+# IDE
+.vscode/
+.idea/
